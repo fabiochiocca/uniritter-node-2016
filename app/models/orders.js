@@ -11,19 +11,17 @@ module.exports = function (server) {
                 total: Types.number().forbidden(),
                 created_on: Types.date().forbidden(),
                 updated_on: Types.date().forbidden(),
-                status: Types.string().forbidden(),
+                status: Types.string().forbidden().valid([ 'new', 'invoiced', 'done', 'cancelled' ]),
                 items: Types.array().items(
                     Types.object().keys({
-                        quantity: Types.number().integer().required(),
                         product_id: Types.string().guid().required(),
+                        quantity: Types.number().integer().required().min(1),
                         price: Types.number().forbidden()
                     }).required().min(1)
-                                            )
-        
-                        }
-            
-                } 
-        
+                )
+            }
+        }
+
     harvesterPlugin.routes.all(schema).forEach(function (route) {
         server.route(route)
     })
