@@ -1,2 +1,1 @@
-# UniRitter2015
-Código base para a cadeira de .net, do curso de pós em metodologias ágeis da UniRitter;
+Sample code for the node.js-based web engineering classes at UniRitter.
