@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for features/step_definitions/orders.js</title>
+    <title>Code coverage report for features/step_definitions/products.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">features/step_definitions/</a> orders.js
+      <a href="../../index.html">all files</a> / <a href="index.html">features/step_definitions/</a> products.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">53.33% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>16/16</span>
+        <span class='fraction'>8/15</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">40% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>5/5</span>
+        <span class='fraction'>2/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">53.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>16/16</span>
+        <span class='fraction'>8/15</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -83,19 +83,13 @@
 38
 39
 40
-41
-42
-43
-44
-45
-46</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+41</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,79 +98,70 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3×</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = function () {
     const 
         _ = require('lodash'),
         chai = require('chai'),
         expect = chai.expect;
-        
-    this.Given(/^an existing order with a (.*) status$/, function (status) {
-        const 
-            that = this,
-            payload = {
-            data: {
-                type: 'orders',
-                attributes: {
-                    status: status,
-                    items: [{ product_id: '598b04ea-8c20-4240-9c2b-1d36350a8d33', quantity: 1}]
-                    }
+&nbsp;
+    const payload = {
+        data: {
+            type: 'products',
+            attributes: {
+                name: 'Produto nome teste',
+                price: 25,
+                brand: 'Produto marca teste',
+                model: 'Produto modelo teste'
                 }
             }
+    };
+    
+    this.Given(/^a valid product/, function () {
+        return payload;
+    });
+    
+    this.When(/^I submit it to the API2$/, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        const that = this;</span>
         
-&nbsp;
-        return this.doHttpRequest('orders', 'post', payload)
+<span class="cstat-no" title="statement not covered" >        return this.doHttpRequest('products', 'post', payload)</span>
         .then((response) =&gt; {
-            that.existingOrder = response.body;
-            return response;
+<span class="cstat-no" title="statement not covered" >            that.newProductId = response.body.data.id;</span>
+<span class="cstat-no" title="statement not covered" >            that.successMessage = response.statusCode;</span>
+<span class="cstat-no" title="statement not covered" >            return response;</span>
         });
     });
     
-    this.When(/^I search this order$/, function () {
-        const 
-            that = this,
-            id = this.existingOrder.data.id;
-        return this.doHttpRequest('orders/' + id, 'get', undefined)
-        .then((response) =&gt; {
-            that.responseBody = JSON.parse(response.body);
-            return response;
-        });
+    this.Then(/^I receive a success message2$/, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        expect(this.successMessage).to.equal(201);</span>
     });
     
-    this.Then(/^I receive the order data$/, function () {
-        expect(this.responseBody.data).not.to.be.undefined;
-    });
-    
-    this.Then(/^its status is (.*)$/, function (status) {
-        expect(this.responseBody.data.attributes.status).to.equal(status);
+    this.Then(/^the new product id$/, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        expect(this.newProductId).not.to.be.undefined;</span>
     });
 }</pre></td></tr>
 </table></pre>
