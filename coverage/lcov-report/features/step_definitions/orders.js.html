@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>8/16</span>
+        <span class='fraction'>16/16</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>8/16</span>
+        <span class='fraction'>16/16</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -110,28 +110,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = function () {
     const 
@@ -155,28 +155,28 @@
 &nbsp;
         return this.doHttpRequest('orders', 'post', payload)
         .then((response) =&gt; {
-<span class="cstat-no" title="statement not covered" >            that.existingOrder = response.body;</span>
-<span class="cstat-no" title="statement not covered" >            return response;</span>
+            that.existingOrder = response.body;
+            return response;
         });
     });
     
-    this.When(/^I search this order$/, <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >        const </span>
+    this.When(/^I search this order$/, function () {
+        const 
             that = this,
             id = this.existingOrder.data.id;
-<span class="cstat-no" title="statement not covered" >        return this.doHttpRequest('orders/' + id, 'get', undefined)</span>
+        return this.doHttpRequest('orders/' + id, 'get', undefined)
         .then((response) =&gt; {
-<span class="cstat-no" title="statement not covered" >            that.responseBody = JSON.parse(response.body);</span>
-<span class="cstat-no" title="statement not covered" >            return response;</span>
+            that.responseBody = JSON.parse(response.body);
+            return response;
         });
     });
     
-    this.Then(/^I receive the order data$/, <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >        expect(this.responseBody.data).not.to.be.undefined;</span>
+    this.Then(/^I receive the order data$/, function () {
+        expect(this.responseBody.data).not.to.be.undefined;
     });
     
-    this.Then(/^its status is (.*)$/, <span class="fstat-no" title="function not covered" >function (status) {</span>
-<span class="cstat-no" title="statement not covered" >        expect(this.responseBody.data.attributes.status).to.equal(status);</span>
+    this.Then(/^its status is (.*)$/, function (status) {
+        expect(this.responseBody.data.attributes.status).to.equal(status);
     });
 }</pre></td></tr>
 </table></pre>
@@ -184,7 +184,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 24 2016 21:43:03 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jun 25 2016 00:57:50 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../prettify.js"></script>

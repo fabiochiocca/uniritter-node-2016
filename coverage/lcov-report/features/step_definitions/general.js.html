@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>10/20</span>
+        <span class='fraction'>20/20</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">33.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/9</span>
+        <span class='fraction'>9/9</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>10/20</span>
+        <span class='fraction'>20/20</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -86,72 +86,72 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = function () {
     const expect = require('chai').expect;
     
     this.Given(/^the system is up and running$/i,  function() {
-        return this.server.then(<span class="fstat-no" title="function not covered" >function(server) {</span>
+        return this.server.then(function(server) {
             // checking the 'up' server flag
-<span class="cstat-no" title="statement not covered" >            expect(server.info.started).to.be.above(0);</span>
-<span class="cstat-no" title="statement not covered" >            return server;</span>
+            expect(server.info.started).to.be.above(0);
+            return server;
         });
     });
     
-    this.When(/^I do a (\w+) against the \/(.*) endpoint$/, <span class="fstat-no" title="function not covered" >function (verb, endpoint) {</span>
-<span class="cstat-no" title="statement not covered" >        var that = this;</span>
-<span class="cstat-no" title="statement not covered" >        return this.doHttpRequest(endpoint, verb, null)</span>
-        .then(<span class="fstat-no" title="function not covered" >function (response) {</span>
-<span class="cstat-no" title="statement not covered" >            that.response = response;</span>
-<span class="cstat-no" title="statement not covered" >            return response;</span>
+    this.When(/^I do a (\w+) against the \/(.*) endpoint$/, function (verb, endpoint) {
+        var that = this;
+        return this.doHttpRequest(endpoint, verb, null)
+        .then(function (response) {
+            that.response = response;
+            return response;
         });
     });
     
-    this.Then(/^I receive a (\d+) status code$/, <span class="fstat-no" title="function not covered" >function (statusCode) {</span>
-<span class="cstat-no" title="statement not covered" >        expect(this.response.statusCode.toString()).to.equal(statusCode);</span>
+    this.Then(/^I receive a (\d+) status code$/, function (statusCode) {
+        expect(this.response.statusCode.toString()).to.equal(statusCode);
     });
        
     this.When(/^I (\w+) it against the \/(.*) endpoint$/, function (verb, endpoint) {
         var that = this;
         return this.doHttpRequest(endpoint, verb, that.fixture.request)
-        .then(<span class="fstat-no" title="function not covered" >function (response) {</span>
-<span class="cstat-no" title="statement not covered" >            that.response = response;</span>
-<span class="cstat-no" title="statement not covered" >            return response;</span>
+        .then(function (response) {
+            that.response = response;
+            return response;
         });
     });
     
-    this.Then(/^a payload containing the newly created resource$/, <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >        expect(this.response.body).to.containSubset(this.fixture.request);</span>
+    this.Then(/^a payload containing the newly created resource$/, function () {
+        expect(this.response.body).to.containSubset(this.fixture.request);
     });    
 };
 &nbsp;</pre></td></tr>
@@ -160,7 +160,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 24 2016 21:43:03 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jun 25 2016 00:57:50 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../prettify.js"></script>
