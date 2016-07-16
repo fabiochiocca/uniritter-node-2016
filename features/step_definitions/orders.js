@@ -42,13 +42,9 @@ module.exports = function () {
     this.Then(/^its status is (.*)$/, function (status) {
         expect(this.responseBody.data.attributes.status).to.equal(status);
     });
-<<<<<<< HEAD
-}
-=======
     
     this.Then(/^wait a few seconds$/, function (callback) {
         setTimeout(callback, 3000);
     });
     
 }
->>>>>>> upstream/master
