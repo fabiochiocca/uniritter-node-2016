@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">69.44% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>20/20</span>
+        <span class='fraction'>25/36</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">64.29% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>9/9</span>
+        <span class='fraction'>9/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">69.44% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>20/20</span>
+        <span class='fraction'>25/36</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -80,7 +80,38 @@
 35
 36
 37
-38</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -114,8 +145,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = function () {
     const expect = require('chai').expect;
@@ -150,17 +212,48 @@
         });
     });
     
+    this.When(/^I submit it to the API (\w+)$/, <span class="fstat-no" title="function not covered" >function (endpoint) {</span>
+<span class="cstat-no" title="statement not covered" >        const that = this;</span>
+        
+<span class="cstat-no" title="statement not covered" >        return this.doHttpRequest(endpoint, 'post', this.payload)</span>
+        .then((response) =&gt; {
+<span class="cstat-no" title="statement not covered" >            that.newId = response.body.data.id;</span>
+<span class="cstat-no" title="statement not covered" >            that.successMessage = response.statusCode;</span>
+            
+<span class="cstat-no" title="statement not covered" >            return response;</span>
+        })
+        .error((response) =&gt; {
+<span class="cstat-no" title="statement not covered" >            that.errorResponse = response.statusCode;</span>
+<span class="cstat-no" title="statement not covered" >            that.errorMessage = response.body.errors[0].message;</span>
+        });
+    });    
+    
     this.Then(/^a payload containing the newly created resource$/, function () {
         expect(this.response.body).to.containSubset(this.fixture.request);
-    });    
-};
-&nbsp;</pre></td></tr>
+    });
+    
+    this.Then(/^I receive a success message$/, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        expect(this.successMessage).to.equal(201);</span>
+    });
+    
+    this.Then(/^the new (\w+) id$/, <span class="fstat-no" title="function not covered" >function (endpoint) {</span>
+<span class="cstat-no" title="statement not covered" >        expect(this.newId).not.to.be.undefined;</span>
+    });
+    
+    this.Then(/^I receive an error response$/, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        expect(this.errorResponse).to.equal(400);</span>
+    });
+    
+    this.Then(/^a message saying that (.*)$/, <span class="fstat-no" title="function not covered" >function (notification) {</span>
+<span class="cstat-no" title="statement not covered" >        expect(this.errorMessage).to.equal(notification);</span>
+    });     
+};</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jul 16 2016 14:09:05 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 25 2016 10:51:47 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../prettify.js"></script>

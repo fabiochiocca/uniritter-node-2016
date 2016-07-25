@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">53.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>8/15</span>
+        <span class='fraction'>14/14</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>4/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">53.33% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>8/15</span>
+        <span class='fraction'>14/14</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line high'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -83,7 +83,26 @@
 38
 39
 40
-41</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -104,24 +123,43 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = function () {
     const 
@@ -130,38 +168,57 @@
         expect = chai.expect;
 &nbsp;
     const payload = {
-        data: {
-            type: 'products',
-            attributes: {
-                name: 'Produto nome teste',
-                price: 25,
-                brand: 'Produto marca teste',
-                model: 'Produto modelo teste'
+            data: {
+                type: 'products',
+                attributes: {
+                    name: 'Produto nome teste',
+                    price: 25,
+                    brand: 'Produto marca teste',
+                    model: 'Produto modelo teste'
                 }
             }
-    };
+        };
     
     this.Given(/^a valid product/, function () {
+        this.payload = payload;
+        
         return payload;
     });
     
-    this.When(/^I submit it to the API2$/, <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >        const that = this;</span>
+    this.Given(/^an invalid product that is missing the name$/, function () {
+        const payload = {
+            data: {
+                type: 'products',
+                attributes: {
+                    name: null,
+                    price: 25,
+                    brand: 'Produto marca teste',
+                    model: 'Produto modelo teste'
+                }
+            }
+        };
         
-<span class="cstat-no" title="statement not covered" >        return this.doHttpRequest('products', 'post', payload)</span>
-        .then((response) =&gt; {
-<span class="cstat-no" title="statement not covered" >            that.newProductId = response.body.data.id;</span>
-<span class="cstat-no" title="statement not covered" >            that.successMessage = response.statusCode;</span>
-<span class="cstat-no" title="statement not covered" >            return response;</span>
-        });
+        this.payload = payload;
+      
+        return payload;
     });
     
-    this.Then(/^I receive a success message2$/, <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >        expect(this.successMessage).to.equal(201);</span>
-    });
-    
-    this.Then(/^the new product id$/, <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >        expect(this.newProductId).not.to.be.undefined;</span>
+    this.Given(/^an invalid product that has a negative price$/, function () {
+        const payload = {
+            data: {
+                type: 'products',
+                attributes: {
+                    name: 'Produto nome teste',
+                    price: -1,
+                    brand: 'Produto marca teste',
+                    model: 'Produto modelo teste'
+                }
+            }
+        };
+      
+        this.payload = payload;
+      
+        return payload;
     });
 }</pre></td></tr>
 </table></pre>
@@ -169,7 +226,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jul 16 2016 14:09:05 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 25 2016 10:51:47 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../prettify.js"></script>
