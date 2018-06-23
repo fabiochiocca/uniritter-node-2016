@@ -1,0 +1,14 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.12.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:hoek:20180212':
+    - hapi-harvester > hoek:
+        patched: '2018-06-23T04:27:17.246Z'
+    - hapi-harvester > boom > hoek:
+        patched: '2018-06-23T04:27:17.246Z'
+    - hapi-harvester > joi > hoek:
+        patched: '2018-06-23T04:27:17.246Z'
+    - hapi-harvester > joi > topo > hoek:
+        patched: '2018-06-23T04:27:17.246Z'
