@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/cucumber.js"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/cucumber.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -37,7 +39,8 @@
     "rx-node": "^1.0.2",
     "susie": "^2.0.0",
     "uuid": "^2.0.2",
-    "vision": "^4.1.0"
+    "vision": "^4.1.0",
+    "snyk": "^1.192.3"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -45,5 +48,6 @@
     "cucumber": "^0.10.3",
     "http-as-promised": "^1.1.0",
     "istanbul": "^0.4.3"
-  }
+  },
+  "snyk": true
 }
